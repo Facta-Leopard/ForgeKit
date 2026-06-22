@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ForgeKit Support</title>
+  <meta name="description" content="ForgeKit support information in English, Korean, Japanese, Chinese, Spanish, French, and German.">
+  <style>
+    :root { color-scheme: light dark; --bg:#f7f7f4; --panel:#fff; --text:#202124; --muted:#62686f; --line:#d9ddd8; --accent:#0f766e; --accent-strong:#115e59; }
+    @media (prefers-color-scheme: dark) { :root { --bg:#101312; --panel:#181c1b; --text:#f4f4f1; --muted:#b6bdb8; --line:#2f3835; --accent:#5eead4; --accent-strong:#99f6e4; } }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); line-height:1.65; }
+    a { color:var(--accent-strong); text-underline-offset:0.18em; }
+    .wrap { width:min(1060px, calc(100% - 32px)); margin:0 auto; }
+    header { border-bottom:1px solid var(--line); padding:24px 0 18px; }
+    nav { display:flex; justify-content:space-between; align-items:center; gap:18px; flex-wrap:wrap; }
+    .brand { font-weight:800; color:var(--text); text-decoration:none; }
+    .links, .language-nav { display:flex; gap:12px; flex-wrap:wrap; }
+    .links a, .language-nav a { font-size:0.94rem; }
+    .hero { padding:58px 0 34px; }
+    .eyebrow { margin:0 0 10px; color:var(--accent-strong); font-weight:750; }
+    h1 { margin:0 0 18px; font-size:clamp(2.2rem,5vw,4.4rem); line-height:1; letter-spacing:0; }
+    .lead { margin:0; max-width:780px; color:var(--muted); font-size:1.12rem; }
+    .notice { margin:28px 0 0; background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:18px; max-width:860px; }
+    .language-nav { margin:28px 0 10px; }
+    .language-nav a { display:inline-flex; border:1px solid var(--line); border-radius:999px; padding:5px 10px; text-decoration:none; background:var(--panel); }
+    section.lang { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:24px; margin:16px 0; }
+    section.lang h2 { margin:0 0 8px; font-size:1.35rem; }
+    section.lang h3 { margin:20px 0 6px; font-size:1rem; }
+    ul { padding-left:1.2rem; margin:8px 0 0; }
+    li { margin:5px 0; }
+    code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:0.95em; }
+    footer { border-top:1px solid var(--line); padding:24px 0 36px; color:var(--muted); font-size:0.92rem; margin-top:28px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <nav aria-label="Primary">
+        <a class="brand" href="./index.html">ForgeKit</a>
+        <div class="links">
+          <a href="./support.html">Support</a>
+          <a href="./privacy.html">Privacy Policy</a>
+          <a href="https://github.com/Facta-Leopard/ForgeKit/issues">GitHub Issues</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="hero">
+      <p class="eyebrow">ForgeKit Support</p>
+      <h1>Help and contact information.</h1>
+      <p class="lead">Use this page for ForgeKit Editor support, setup questions, bug reports, export issues, validation workflow questions, MCP setup, and optional AI provider configuration support.</p>
+      <div class="notice">
+        <strong>Public support channel:</strong> <a href="https://github.com/Facta-Leopard/ForgeKit/issues">GitHub Issues</a>. Do not post API keys, tokens, credentials, paid-license details, private project files, or confidential screenshots in public issues.
+      </div>
+      <div class="language-nav" aria-label="Languages">
+        <a href="#en">English</a><a href="#ko">한국어</a><a href="#ja">日本語</a><a href="#zh-hans">简体中文</a><a href="#zh-hant">繁體中文</a><a href="#es">Español</a><a href="#fr">Français</a><a href="#de">Deutsch</a>
+      </div>
+    </div>
+
+    <section class="lang" id="en" lang="en">
+      <h2>English</h2>
+      <p>For ForgeKit support, open an issue in the GitHub repository. Support is provided on a best-effort basis through the public issue tracker.</p>
+      <h3>What to include</h3>
+      <ul>
+        <li>ForgeKit version or build date, macOS version, and device model if relevant.</li>
+        <li>The workflow area: project creation, 2D scene editing, 3D scene editing, export, validation, release evidence, MCP, or AI provider setup.</li>
+        <li>Expected result, actual result, and the smallest repeatable steps.</li>
+        <li>Screenshots or logs only after removing secrets, private paths, credentials, license data, and unpublished project content.</li>
+      </ul>
+      <h3>Before posting</h3>
+      <ul>
+        <li>Check whether the project opens from a local folder you control.</li>
+        <li>Run the relevant validation or export workflow again and note the exact failing row or message.</li>
+        <li>If the issue involves MCP or AI, confirm that your transport, endpoint, provider, model, and credential reference are the intended ones.</li>
+      </ul>
+    </section>
+
+    <section class="lang" id="ko" lang="ko">
+      <h2>한국어</h2>
+      <p>ForgeKit 지원은 GitHub 저장소의 이슈를 통해 요청해 주세요. 지원은 공개 이슈 트래커에서 가능한 범위 내에서 제공됩니다.</p>
+      <h3>이슈에 포함할 내용</h3>
+      <ul>
+        <li>ForgeKit 버전 또는 빌드 날짜, macOS 버전, 필요한 경우 기기 모델.</li>
+        <li>문제가 발생한 영역: 프로젝트 생성, 2D 씬 편집, 3D 씬 편집, 내보내기, 검증, 릴리스 증거, MCP, AI 제공자 설정.</li>
+        <li>기대한 결과, 실제 결과, 가장 짧게 재현 가능한 단계.</li>
+        <li>스크린샷이나 로그를 올릴 때는 API 키, 토큰, 자격 증명, 라이선스 정보, 비공개 경로, 공개하지 않을 프로젝트 내용을 제거해 주세요.</li>
+      </ul>
+      <h3>작성 전 확인</h3>
+      <ul>
+        <li>프로젝트가 사용자가 접근 권한을 가진 로컬 폴더에서 정상적으로 열리는지 확인해 주세요.</li>
+        <li>관련 검증 또는 내보내기 흐름을 다시 실행하고, 실패한 행이나 메시지를 정확히 적어 주세요.</li>
+        <li>MCP 또는 AI 문제라면 transport, endpoint, provider, model, credential reference가 의도한 설정인지 확인해 주세요.</li>
+      </ul>
+    </section>
+
+    <section class="lang" id="ja" lang="ja">
+      <h2>日本語</h2>
+      <p>ForgeKit のサポートが必要な場合は、GitHub リポジトリの Issue を作成してください。サポートは公開 Issue トラッカー上でベストエフォートで提供されます。</p>
+      <h3>記載してほしい情報</h3>
+      <ul>
+        <li>ForgeKit のバージョンまたはビルド日、macOS のバージョン、必要に応じてデバイスモデル。</li>
+        <li>対象の作業領域: プロジェクト作成、2D シーン編集、3D シーン編集、エクスポート、検証、リリース証跡、MCP、AI プロバイダー設定。</li>
+        <li>期待した結果、実際の結果、最小限の再現手順。</li>
+        <li>スクリーンショットやログを共有する場合は、API キー、トークン、認証情報、ライセンス情報、非公開パス、未公開プロジェクト内容を削除してください。</li>
+      </ul>
+      <h3>投稿前の確認</h3>
+      <ul>
+        <li>自分がアクセス権を持つローカルフォルダからプロジェクトを開けるか確認してください。</li>
+        <li>該当する検証またはエクスポート手順を再実行し、失敗した行やメッセージを記録してください。</li>
+        <li>MCP または AI に関する問題では、transport、endpoint、provider、model、credential reference が意図した設定か確認してください。</li>
+      </ul>
+    </section>
+
+    <section class="lang" id="zh-hans" lang="zh-Hans">
+      <h2>简体中文</h2>
+      <p>如需 ForgeKit 支持，请在 GitHub 仓库中创建 Issue。支持将通过公开 Issue 跟踪器尽力提供。</p>
+      <h3>请包含的信息</h3>
+      <ul>
+        <li>ForgeKit 版本或构建日期、macOS 版本，以及相关设备型号。</li>
+        <li>相关工作流：项目创建、2D 场景编辑、3D 场景编辑、导出、验证、发布证据、MCP 或 AI 提供方设置。</li>
+        <li>预期结果、实际结果，以及最小可复现步骤。</li>
+        <li>上传截图或日志前，请移除 API 密钥、令牌、凭据、许可证信息、私有路径和未公开项目内容。</li>
+      </ul>
+      <h3>发布前请检查</h3>
+      <ul>
+        <li>确认项目可以从你有权限访问的本地文件夹打开。</li>
+        <li>重新运行相关验证或导出流程，并记录具体失败行或消息。</li>
+        <li>如果问题涉及 MCP 或 AI，请确认 transport、endpoint、provider、model 和 credential reference 均为预期设置。</li>
+      </ul>
+    </section>
+
+    <section class="lang" id="zh-hant" lang="zh-Hant">
+      <h2>繁體中文</h2>
+      <p>如需 ForgeKit 支援，請在 GitHub 儲存庫建立 Issue。支援會透過公開 Issue 追蹤器盡力提供。</p>
+      <h3>請包含的資訊</h3>
+      <ul>
+        <li>ForgeKit 版本或建置日期、macOS 版本，以及相關裝置型號。</li>
+        <li>相關工作流程：專案建立、2D 場景編輯、3D 場景編輯、匯出、驗證、發行證據、MCP 或 AI 供應商設定。</li>
+        <li>預期結果、實際結果，以及最小可重現步驟。</li>
+        <li>分享截圖或記錄前，請移除 API 金鑰、權杖、憑證、授權資訊、私人路徑和未公開專案內容。</li>
+      </ul>
+      <h3>發布前請確認</h3>
+      <ul>
+        <li>確認專案可以從你有權限存取的本機資料夾開啟。</li>
+        <li>重新執行相關驗證或匯出流程，並記錄具體失敗列或訊息。</li>
+        <li>若問題涉及 MCP 或 AI，請確認 transport、endpoint、provider、model 與 credential reference 都是預期設定。</li>
+      </ul>
+    </section>
+
+    <section class="lang" id="es" lang="es">
+      <h2>Español</h2>
+      <p>Para obtener soporte de ForgeKit, abre un issue en el repositorio de GitHub. El soporte se ofrece de la mejor manera posible mediante el rastreador público de issues.</p>
+      <h3>Qué incluir</h3>
+      <ul>
+        <li>Versión o fecha de compilación de ForgeKit, versión de macOS y modelo del dispositivo si es relevante.</li>
+        <li>Área del flujo: creación de proyecto, edición de escenas 2D, edición de escenas 3D, exportación, validación, evidencia de lanzamiento, MCP o configuración del proveedor de AI.</li>
+        <li>Resultado esperado, resultado real y los pasos mínimos para reproducir el problema.</li>
+        <li>Comparte capturas o registros solo después de eliminar claves API, tokens, credenciales, datos de licencia, rutas privadas y contenido de proyectos no publicados.</li>
+      </ul>
+      <h3>Antes de publicar</h3>
+      <ul>
+        <li>Comprueba que el proyecto se abre desde una carpeta local a la que tienes acceso.</li>
+        <li>Ejecuta de nuevo el flujo de validación o exportación correspondiente y anota la fila o el mensaje exacto que falla.</li>
+        <li>Si el problema involucra MCP o AI, confirma que transport, endpoint, provider, model y credential reference sean los esperados.</li>
+      </ul>
+    </section>
+
+    <section class="lang" id="fr" lang="fr">
+      <h2>Français</h2>
+      <p>Pour obtenir de l’aide avec ForgeKit, ouvrez une issue dans le dépôt GitHub. Le support est fourni au mieux via le suivi public des issues.</p>
+      <h3>Informations à fournir</h3>
+      <ul>
+        <li>Version ou date de build de ForgeKit, version de macOS et modèle de l’appareil si nécessaire.</li>
+        <li>Domaine concerné : création de projet, édition de scène 2D, édition de scène 3D, export, validation, preuves de publication, MCP ou configuration du fournisseur AI.</li>
+        <li>Résultat attendu, résultat obtenu et étapes minimales de reproduction.</li>
+        <li>Ne partagez des captures ou journaux qu’après avoir supprimé les clés API, jetons, identifiants, données de licence, chemins privés et contenu de projet non publié.</li>
+      </ul>
+      <h3>Avant de publier</h3>
+      <ul>
+        <li>Vérifiez que le projet s’ouvre depuis un dossier local auquel vous avez accès.</li>
+        <li>Relancez le flux de validation ou d’export concerné et notez la ligne ou le message exact en échec.</li>
+        <li>Si le problème concerne MCP ou AI, confirmez que transport, endpoint, provider, model et credential reference correspondent bien à la configuration voulue.</li>
+      </ul>
+    </section>
+
+    <section class="lang" id="de" lang="de">
+      <h2>Deutsch</h2>
+      <p>Für ForgeKit-Support erstelle bitte ein Issue im GitHub-Repository. Support wird nach bestem Aufwand über den öffentlichen Issue-Tracker bereitgestellt.</p>
+      <h3>Was enthalten sein sollte</h3>
+      <ul>
+        <li>ForgeKit-Version oder Build-Datum, macOS-Version und gegebenenfalls das Gerätemodell.</li>
+        <li>Betroffener Bereich: Projekterstellung, 2D-Szenenbearbeitung, 3D-Szenenbearbeitung, Export, Validierung, Release-Nachweise, MCP oder AI-Provider-Konfiguration.</li>
+        <li>Erwartetes Ergebnis, tatsächliches Ergebnis und die kleinsten reproduzierbaren Schritte.</li>
+        <li>Teile Screenshots oder Logs nur, nachdem API-Schlüssel, Tokens, Zugangsdaten, Lizenzdaten, private Pfade und unveröffentlichte Projektinhalte entfernt wurden.</li>
+      </ul>
+      <h3>Vor dem Erstellen eines Issues</h3>
+      <ul>
+        <li>Prüfe, ob das Projekt aus einem lokalen Ordner geöffnet wird, auf den du Zugriff hast.</li>
+        <li>Führe den betroffenen Validierungs- oder Exportablauf erneut aus und notiere die genaue fehlgeschlagene Zeile oder Meldung.</li>
+        <li>Wenn es um MCP oder AI geht, bestätige, dass transport, endpoint, provider, model und credential reference der beabsichtigten Konfiguration entsprechen.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">Last updated: 2026-06-23. Support link: <a href="https://github.com/Facta-Leopard/ForgeKit/issues">https://github.com/Facta-Leopard/ForgeKit/issues</a></div>
+  </footer>
+</body>
+</html>
