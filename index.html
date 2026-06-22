@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ForgeKit | Support and Privacy</title>
+  <meta name="description" content="ForgeKit support and privacy information in English, Korean, Japanese, Chinese, Spanish, French, and German.">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --panel: #ffffff;
+      --text: #202124;
+      --muted: #62686f;
+      --line: #d9ddd8;
+      --accent: #0f766e;
+      --accent-strong: #115e59;
+      --ink: #111827;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #101312;
+        --panel: #181c1b;
+        --text: #f4f4f1;
+        --muted: #b6bdb8;
+        --line: #2f3835;
+        --accent: #5eead4;
+        --accent-strong: #99f6e4;
+        --ink: #f9fafb;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: var(--accent-strong); text-decoration-thickness: 0.08em; text-underline-offset: 0.18em; }
+    .wrap { width: min(1080px, calc(100% - 32px)); margin: 0 auto; }
+    header { padding: 28px 0 18px; border-bottom: 1px solid var(--line); }
+    nav { display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+    .brand { font-weight: 800; letter-spacing: 0; color: var(--ink); font-size: 1.05rem; }
+    .links { display: flex; gap: 14px; flex-wrap: wrap; font-size: 0.95rem; }
+    .hero { padding: 72px 0 54px; }
+    .eyebrow { color: var(--accent-strong); font-weight: 700; margin: 0 0 12px; }
+    h1 { font-size: clamp(2.4rem, 5vw, 4.8rem); line-height: 0.98; margin: 0 0 22px; letter-spacing: 0; max-width: 900px; }
+    .lead { font-size: clamp(1.06rem, 2vw, 1.28rem); color: var(--muted); max-width: 760px; margin: 0 0 30px; }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .button { display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); font-weight: 700; text-decoration: none; }
+    .button.primary { background: var(--accent-strong); color: #fff; border-color: var(--accent-strong); }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; padding-bottom: 46px; }
+    .card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 20px; min-height: 170px; }
+    .card h2 { margin: 0 0 8px; font-size: 1.1rem; }
+    .card p { margin: 0; color: var(--muted); }
+    .language-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .pill { border: 1px solid var(--line); border-radius: 999px; padding: 5px 10px; color: var(--muted); background: color-mix(in srgb, var(--panel) 80%, transparent); font-size: 0.92rem; }
+    footer { border-top: 1px solid var(--line); padding: 24px 0 36px; color: var(--muted); font-size: 0.92rem; }
+    @media (max-width: 780px) {
+      .hero { padding-top: 46px; }
+      .grid { grid-template-columns: 1fr; }
+      h1 { font-size: 2.6rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <nav aria-label="Primary">
+        <div class="brand">ForgeKit</div>
+        <div class="links">
+          <a href="./support.html">Support</a>
+          <a href="./privacy.html">Privacy Policy</a>
+          <a href="https://github.com/Facta-Leopard/ForgeKit/issues">GitHub Issues</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <p class="eyebrow">Support and privacy information</p>
+      <h1>ForgeKit help, contact, and privacy pages.</h1>
+      <p class="lead">ForgeKit is a game app editor for creating, validating, and exporting game projects. This site provides user support and privacy information in one place, with language sections included directly on each page.</p>
+      <div class="actions">
+        <a class="button primary" href="./support.html">Open Support</a>
+        <a class="button" href="./privacy.html">Open Privacy Policy</a>
+      </div>
+      <div class="language-list" aria-label="Supported languages">
+        <span class="pill">English</span>
+        <span class="pill">한국어</span>
+        <span class="pill">日本語</span>
+        <span class="pill">简体中文</span>
+        <span class="pill">繁體中文</span>
+        <span class="pill">Español</span>
+        <span class="pill">Français</span>
+        <span class="pill">Deutsch</span>
+      </div>
+    </section>
+
+    <section class="grid wrap" aria-label="Page summary">
+      <article class="card">
+        <h2>Support</h2>
+        <p>Find the right support channel, what information to include in a report, and how to keep API keys, credentials, and private project files out of public issues.</p>
+      </article>
+      <article class="card">
+        <h2>Privacy Policy</h2>
+        <p>Review what ForgeKit stores locally, what optional integrations may send to third-party services, and how user-controlled project data is handled.</p>
+      </article>
+      <article class="card">
+        <h2>Page Setup</h2>
+        <p>After GitHub Pages is enabled for this repository, the root page can link directly to <code>/support.html</code> and <code>/privacy.html</code> without language subfolders.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">Last updated: 2026-06-23. This static site is maintained for ForgeKit support and app review reference.</div>
+  </footer>
+</body>
+</html>
