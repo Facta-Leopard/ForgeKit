@@ -3,120 +3,423 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ForgeKit | Support and Privacy</title>
-  <meta name="description" content="ForgeKit support and privacy information in English, Korean, Japanese, Chinese, Spanish, French, and German.">
-  <style>
-    :root {
-      color-scheme: light dark;
-      --bg: #f7f7f4;
-      --panel: #ffffff;
-      --text: #202124;
-      --muted: #62686f;
-      --line: #d9ddd8;
-      --accent: #0f766e;
-      --accent-strong: #115e59;
-      --ink: #111827;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #101312;
-        --panel: #181c1b;
-        --text: #f4f4f1;
-        --muted: #b6bdb8;
-        --line: #2f3835;
-        --accent: #5eead4;
-        --accent-strong: #99f6e4;
-        --ink: #f9fafb;
-      }
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-    a { color: var(--accent-strong); text-decoration-thickness: 0.08em; text-underline-offset: 0.18em; }
-    .wrap { width: min(1080px, calc(100% - 32px)); margin: 0 auto; }
-    header { padding: 28px 0 18px; border-bottom: 1px solid var(--line); }
-    nav { display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
-    .brand { font-weight: 800; letter-spacing: 0; color: var(--ink); font-size: 1.05rem; }
-    .links { display: flex; gap: 14px; flex-wrap: wrap; font-size: 0.95rem; }
-    .hero { padding: 72px 0 54px; }
-    .eyebrow { color: var(--accent-strong); font-weight: 700; margin: 0 0 12px; }
-    h1 { font-size: clamp(2.4rem, 5vw, 4.8rem); line-height: 0.98; margin: 0 0 22px; letter-spacing: 0; max-width: 900px; }
-    .lead { font-size: clamp(1.06rem, 2vw, 1.28rem); color: var(--muted); max-width: 760px; margin: 0 0 30px; }
-    .actions { display: flex; gap: 12px; flex-wrap: wrap; }
-    .button { display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); font-weight: 700; text-decoration: none; }
-    .button.primary { background: var(--accent-strong); color: #fff; border-color: var(--accent-strong); }
-    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; padding-bottom: 46px; }
-    .card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 20px; min-height: 170px; }
-    .card h2 { margin: 0 0 8px; font-size: 1.1rem; }
-    .card p { margin: 0; color: var(--muted); }
-    .language-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
-    .pill { border: 1px solid var(--line); border-radius: 999px; padding: 5px 10px; color: var(--muted); background: color-mix(in srgb, var(--panel) 80%, transparent); font-size: 0.92rem; }
-    footer { border-top: 1px solid var(--line); padding: 24px 0 36px; color: var(--muted); font-size: 0.92rem; }
-    @media (max-width: 780px) {
-      .hero { padding-top: 46px; }
-      .grid { grid-template-columns: 1fr; }
-      h1 { font-size: 2.6rem; }
-    }
-  </style>
+  <meta name="theme-color" content="#050914">
+  <meta name="description" content="ForgeKit is a visual macOS game editor for building Apple-native 2D, 3D, and mixed games with SpriteKit and RealityKit. Beta release planned.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ForgeKit">
+  <meta property="og:title" content="ForgeKit — From first scene to playable game">
+  <meta property="og:description" content="Shape 2D, 3D, and mixed games visually, test them in Play Preview, then hand off an Xcode project. Beta release planned.">
+  <meta property="og:url" content="https://facta-leopard.github.io/ForgeKit/">
+  <meta property="og:image" content="https://facta-leopard.github.io/ForgeKit/assets/forgekit-og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="ForgeKit rabbit world-builder with the headline From first scene to playable game.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ForgeKit — From first scene to playable game">
+  <meta name="twitter:description" content="A visual game editor for Apple platforms.">
+  <meta name="twitter:image" content="https://facta-leopard.github.io/ForgeKit/assets/forgekit-og.png">
+  <meta name="twitter:image:alt" content="ForgeKit rabbit world-builder with the headline From first scene to playable game.">
+  <link rel="canonical" href="https://facta-leopard.github.io/ForgeKit/">
+  <link rel="icon" type="image/png" href="./assets/favicon.png">
+  <link rel="preload" as="image" href="./assets/forgekit-rabbit-hero.png" fetchpriority="high">
+  <link rel="stylesheet" href="./assets/site.css?v=20260829-2">
+  <script src="./assets/site-i18n-cjk.js?v=20260829-2" defer></script>
+  <script src="./assets/site-i18n-eu.js?v=20260829-2" defer></script>
+  <script src="./assets/site-i18n.js?v=20260829-2" defer></script>
+  <script src="./assets/site.js?v=20260829-2" defer></script>
+  <title>ForgeKit — From first scene to playable game</title>
 </head>
 <body>
-  <header>
-    <div class="wrap">
-      <nav aria-label="Primary">
-        <div class="brand">ForgeKit</div>
-        <div class="links">
-          <a href="./support.html">Support</a>
-          <a href="./privacy.html">Privacy Policy</a>
-          <a href="https://github.com/Facta-Leopard/ForgeKit/issues">GitHub Issues</a>
-        </div>
-      </nav>
-    </div>
+  <div class="scroll-progress" aria-hidden="true"><span data-scroll-progress></span></div>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-header>
+    <nav class="nav shell" aria-label="Primary navigation">
+      <a class="brand" href="./index.html" aria-label="ForgeKit home">
+        <img src="./assets/favicon.png" alt="" width="34" height="34">
+        <span>ForgeKit</span>
+      </a>
+
+      <div class="nav-links" aria-label="Page sections">
+        <a href="#workflow">Workflow</a>
+        <a href="#tutorial-preview">Tutorial</a>
+        <a href="#toolkit">Toolkit</a>
+        <a href="#character">Character</a>
+      </div>
+
+      <div class="nav-actions">
+        <label class="language-picker">
+          <span class="language-picker-icon" aria-hidden="true">◎</span>
+          <span class="sr-only">Language</span>
+          <select data-language-select aria-label="Language">
+            <option value="auto">System</option>
+            <option value="en" data-i18n-static>English</option>
+            <option value="ko" data-i18n-static>한국어</option>
+            <option value="ja" data-i18n-static>日本語</option>
+            <option value="zh-Hans" data-i18n-static>简体中文</option>
+            <option value="zh-Hant" data-i18n-static>繁體中文</option>
+            <option value="es" data-i18n-static>Español</option>
+            <option value="fr" data-i18n-static>Français</option>
+            <option value="de" data-i18n-static>Deutsch</option>
+          </select>
+          <span class="language-picker-chevron" aria-hidden="true">⌄</span>
+        </label>
+
+        <a class="nav-cta" href="https://github.com/Facta-Leopard/ForgeKit" rel="noreferrer">
+          <span>View on GitHub</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </nav>
   </header>
 
-  <main>
-    <section class="hero wrap">
-      <p class="eyebrow">Support and privacy information</p>
-      <h1>ForgeKit help, contact, and privacy pages.</h1>
-      <p class="lead">ForgeKit is a game app editor for creating, validating, and exporting game projects. This site provides user support and privacy information in one place, with language sections included directly on each page.</p>
-      <div class="actions">
-        <a class="button primary" href="./support.html">Open Support</a>
-        <a class="button" href="./privacy.html">Open Privacy Policy</a>
+  <main id="main">
+    <section class="hero shell" aria-labelledby="hero-title">
+      <div class="hero-ambient" aria-hidden="true">
+        <span class="ambient-ring ambient-ring-one"></span>
+        <span class="ambient-ring ambient-ring-two"></span>
+        <span class="ambient-spark ambient-spark-one"></span>
+        <span class="ambient-spark ambient-spark-two"></span>
       </div>
-      <div class="language-list" aria-label="Supported languages">
-        <span class="pill">English</span>
-        <span class="pill">한국어</span>
-        <span class="pill">日本語</span>
-        <span class="pill">简体中文</span>
-        <span class="pill">繁體中文</span>
-        <span class="pill">Español</span>
-        <span class="pill">Français</span>
-        <span class="pill">Deutsch</span>
+
+      <div class="hero-copy reveal is-visible">
+        <p class="kicker beta-kicker"><span class="live-dot" aria-hidden="true"></span> Beta release planned <span aria-hidden="true">/</span> Visual game editor for Apple platforms</p>
+        <h1 id="hero-title" data-i18n-template="hero-title">Make the world in your head <span class="gradient-text">playable.</span></h1>
+        <p class="hero-lead" data-i18n-template="hero-lead">Build <strong>2D, 3D, and mixed games</strong> visually in a native macOS workspace. Test the loop in Play Preview, then export a structured Xcode project for release work.</p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#workflow">
+            <span>See how it flows</span>
+            <span class="button-icon" aria-hidden="true">↓</span>
+          </a>
+          <a class="button button-quiet" href="https://github.com/Facta-Leopard/ForgeKit" rel="noreferrer">
+            <span>Explore the repository</span>
+            <span class="button-icon" aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <ul class="hero-tech" aria-label="Core technologies and workflow">
+          <li>SpriteKit</li>
+          <li>RealityKit</li>
+          <li>Play Preview</li>
+          <li>Xcode handoff</li>
+        </ul>
+      </div>
+
+      <div class="hero-visual reveal is-visible" data-parallax-root>
+        <div class="visual-halo" aria-hidden="true"></div>
+        <div class="orbit orbit-outer" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="orbit orbit-inner" aria-hidden="true"><span></span><span></span></div>
+
+        <figure class="mascot-stage" data-parallax>
+          <span class="mascot-floor-shadow" aria-hidden="true"></span>
+          <div class="mascot-rig">
+            <img class="rig-part mascot-base-image" src="./assets/forgekit-rabbit-base.png" width="1027" height="1531" alt="ForgeKit's goggled rabbit world-builder holding a stylus and supporting a voxel game scene" decoding="async" fetchpriority="high">
+            <div class="rig-world-group" aria-hidden="true">
+              <span class="world-energy"></span>
+              <img class="rig-part rig-world" src="./assets/forgekit-rig-world.png" width="1254" height="1254" alt="" decoding="async">
+              <span class="craft-particle craft-particle-one"></span>
+              <span class="craft-particle craft-particle-two"></span>
+              <span class="craft-particle craft-particle-three"></span>
+              <span class="craft-particle craft-particle-four"></span>
+            </div>
+          </div>
+          <figcaption class="mascot-status">
+            <span class="status-light" aria-hidden="true"></span>
+            <span><small>WORLD STATE</small> Beta release planned</span>
+          </figcaption>
+        </figure>
+
+        <div class="tool-chip tool-chip-scene" aria-hidden="true"><span>01</span> SCENE</div>
+        <div class="tool-chip tool-chip-behavior" aria-hidden="true"><span>02</span> BEHAVIOR</div>
+        <div class="tool-chip tool-chip-play" aria-hidden="true"><span>03</span> PLAY</div>
+        <div class="axis-chip" aria-hidden="true"><i class="axis-x"></i><i class="axis-y"></i><i class="axis-z"></i></div>
+      </div>
+
+      <a class="scroll-cue" href="#workflow" aria-label="Scroll to the workflow section">
+        <span>Scroll to forge</span>
+        <i aria-hidden="true"></i>
+      </a>
+    </section>
+
+    <div class="signal-strip" aria-label="ForgeKit capabilities">
+      <div class="signal-track">
+        <span>SCENES</span><i></i><span>ENTITIES</span><i></i><span>BEHAVIORS</span><i></i><span>2D</span><i></i><span>3D</span><i></i><span>MIXED</span><i></i><span>PLAY PREVIEW</span><i></i><span>XCODE HANDOFF</span><i></i>
+        <span aria-hidden="true">SCENES</span><i aria-hidden="true"></i><span aria-hidden="true">ENTITIES</span><i aria-hidden="true"></i><span aria-hidden="true">BEHAVIORS</span><i aria-hidden="true"></i><span aria-hidden="true">2D</span><i aria-hidden="true"></i><span aria-hidden="true">3D</span><i aria-hidden="true"></i><span aria-hidden="true">MIXED</span><i aria-hidden="true"></i><span aria-hidden="true">PLAY PREVIEW</span><i aria-hidden="true"></i><span aria-hidden="true">XCODE HANDOFF</span><i aria-hidden="true"></i>
+      </div>
+    </div>
+
+    <section class="section workflow-section shell" id="workflow" aria-labelledby="workflow-title">
+      <div class="section-heading reveal">
+        <p class="section-kicker">One creative loop</p>
+        <h2 id="workflow-title" data-i18n-template="workflow-title">Shape. Test. Refine. <span>Hand off.</span></h2>
+        <p>ForgeKit keeps the creative loop visible. The editor owns the world-building work; Xcode remains the final release boundary.</p>
+      </div>
+
+      <div class="workflow-grid">
+        <article class="workflow-card reveal" data-spotlight>
+          <header>
+            <span class="step-index">01</span>
+            <span class="step-state"><i></i> BUILD</span>
+          </header>
+          <div class="step-display" aria-hidden="true">
+            <span class="scene-node node-a"></span>
+            <span class="scene-node node-b"></span>
+            <span class="scene-node node-c"></span>
+            <span class="scene-link link-a"></span>
+            <span class="scene-link link-b"></span>
+          </div>
+          <h3>Shape the scene</h3>
+          <p>Arrange entities, components, assets, and cameras in visual 2D, 3D, or mixed workspaces.</p>
+          <footer><span>SpriteKit</span><span>RealityKit</span><span>Mixed</span></footer>
+        </article>
+
+        <article class="workflow-card reveal" data-spotlight>
+          <header>
+            <span class="step-index">02</span>
+            <span class="step-state step-state-lime"><i></i> PREVIEW</span>
+          </header>
+          <div class="preview-display" aria-hidden="true">
+            <button type="button" tabindex="-1"><span></span></button>
+            <div class="preview-wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <small>00:12.48</small>
+          </div>
+          <h3>Play while it is fresh</h3>
+          <p>Use behavior-driven Play Preview to check the loop while the idea is still easy to reshape.</p>
+          <footer><span>Events</span><span>Conditions</span><span>Actions</span></footer>
+        </article>
+
+        <article class="workflow-card reveal" data-spotlight>
+          <header>
+            <span class="step-index">03</span>
+            <span class="step-state step-state-orange"><i></i> EXPORT</span>
+          </header>
+          <div class="export-display" aria-hidden="true">
+            <div><span>PROJECT</span><strong>ForgeWorld.xcodeproj</strong></div>
+            <i></i>
+            <div><span>TARGET</span><strong>Apple platforms</strong></div>
+            <b>↗</b>
+          </div>
+          <h3>Hand off with context</h3>
+          <p>Export a structured Xcode project for signing, archiving, distribution, and platform release work.</p>
+          <footer><span>Xcode</span><span>Validation</span><span>Release</span></footer>
+        </article>
       </div>
     </section>
 
-    <section class="grid wrap" aria-label="Page summary">
-      <article class="card">
-        <h2>Support</h2>
-        <p>Find the right support channel, what information to include in a report, and how to keep API keys, credentials, and private project files out of public issues.</p>
-      </article>
-      <article class="card">
-        <h2>Privacy Policy</h2>
-        <p>Review what ForgeKit stores locally, what optional integrations may send to third-party services, and how user-controlled project data is handled.</p>
-      </article>
-      <article class="card">
-        <h2>Page Setup</h2>
-        <p>After GitHub Pages is enabled for this repository, the root page can link directly to <code>/support.html</code> and <code>/privacy.html</code> without language subfolders.</p>
-      </article>
+    <section class="section tutorial-section" id="tutorial-preview" aria-labelledby="tutorial-preview-title">
+      <div class="shell">
+        <div class="section-heading tutorial-heading reveal">
+          <p class="section-kicker">Built from the Moonwhisk Vale tutorial pack</p>
+          <h2 id="tutorial-preview-title" data-i18n-template="tutorial-title">Learn it in the editor.<br><span>Feel it in play.</span></h2>
+          <p>This homepage preview uses the bundled tutorial artwork to stage the SwiftUI workspace and the game loop side by side. Switch the screen to see the same project move from authoring to Play Preview.</p>
+        </div>
+
+        <div class="tutorial-demo reveal" data-tutorial-demo data-mode="editor">
+          <div class="demo-control-row">
+            <div class="demo-tabs" role="group" aria-label="Tutorial screen preview">
+              <button type="button" class="is-active" data-demo-screen="editor" aria-pressed="true"><span>01</span> Editor</button>
+              <button type="button" data-demo-screen="play" aria-pressed="false"><span>02</span> Play Preview</button>
+            </div>
+            <p class="demo-source"><i aria-hidden="true"></i> Bundled tutorial assets</p>
+          </div>
+
+          <div class="forge-window">
+            <div class="forge-titlebar">
+              <div class="window-lights" aria-hidden="true"><i></i><i></i><i></i></div>
+              <div class="forge-window-title"><img src="./assets/favicon.png" width="18" height="18" alt=""> <span>Moonwhisk Vale — First Engagement</span></div>
+              <button class="forge-preview-toggle" type="button" data-demo-play-toggle aria-label="Toggle the staged Play Preview"><i aria-hidden="true"></i><span data-demo-play-label>Play</span></button>
+            </div>
+
+            <div class="forge-workspace">
+              <aside class="forge-sidebar" aria-label="Staged scene hierarchy">
+                <div class="panel-title"><span>Hierarchy</span><b>12</b></div>
+                <p class="scene-label"><i></i> Moonwhisk Vale</p>
+                <ul>
+                  <li><i class="entity-camera"></i> Main Camera</li>
+                  <li><i></i> Engage Backdrop</li>
+                  <li><i></i> Defense Line</li>
+                  <li class="is-selected"><i></i> Cannon Rig</li>
+                  <li class="is-child"><i></i> Rabbit Gunner</li>
+                  <li><i></i> Mana Bolt Prototype</li>
+                  <li><i></i> Basic Bird Prototype</li>
+                  <li><i></i> Battle Status HUD</li>
+                </ul>
+              </aside>
+
+              <div class="forge-viewport" aria-label="Moonwhisk Vale tutorial scene composed from the tutorial pack artwork">
+                <img class="moonwhisk-backdrop" src="./assets/moonwhisk-backdrop.jpg" width="2688" height="1242" loading="lazy" decoding="async" alt="A bright ocean defense wall and lighthouse from the Moonwhisk Vale tutorial pack">
+                <div class="viewport-vignette" aria-hidden="true"></div>
+
+                <div class="editor-camera-frame" aria-hidden="true"><span>Main Camera</span></div>
+                <div class="spawn-marker spawn-marker-left" aria-hidden="true"><span>Bird Spawner — Port</span><i>BI</i></div>
+                <div class="spawn-marker spawn-marker-center" aria-hidden="true"><span>Bird Spawner — Center</span><i>BI</i></div>
+                <div class="spawn-marker spawn-marker-right" aria-hidden="true"><span>Bird Spawner — Starboard</span><i>BI</i></div>
+
+                <img class="tutorial-bird bird-one" src="./assets/moonwhisk-bird.png" width="840" height="560" loading="lazy" decoding="async" alt="">
+                <img class="tutorial-bird bird-two" src="./assets/moonwhisk-bird.png" width="840" height="560" loading="lazy" decoding="async" alt="">
+                <img class="tutorial-bird bird-three" src="./assets/moonwhisk-bird.png" width="840" height="560" loading="lazy" decoding="async" alt="">
+                <span class="mana-bolt" aria-hidden="true"></span>
+                <img class="tutorial-cannon" src="./assets/moonwhisk-cannon.png" width="448" height="560" loading="lazy" decoding="async" alt="Anti-air cannon from the Moonwhisk Vale tutorial pack">
+                <img class="tutorial-rabbit" src="./assets/moonwhisk-rabbit.png" width="448" height="560" loading="lazy" decoding="async" alt="Rabbit gunner from the Moonwhisk Vale tutorial pack">
+                <div class="selection-outline" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+
+                <div class="play-hud" aria-hidden="true"><strong>SCORE <span>0 / 4</span></strong><i></i><strong>BASE <span>100</span></strong></div>
+                <p class="play-instructions">A / D TO MOVE <i></i> SPACE OR CLICK TO FIRE</p>
+                <div class="viewport-status" aria-hidden="true"><span>2D</span><b>100%</b><span>GRID 16</span></div>
+              </div>
+
+              <aside class="forge-inspector" aria-label="Staged SwiftUI inspector">
+                <div class="panel-title"><span>Inspector</span><b>⌘I</b></div>
+                <div class="inspector-entity"><small>SELECTED ENTITY</small><strong>Cannon Rig</strong><span>PlayerStart</span></div>
+                <div class="inspector-group">
+                  <p>Transform 2D <b>⌃</b></p>
+                  <label>X <span>672</span></label><label>Y <span>516</span></label>
+                  <label>Rotation <span>0°</span></label>
+                </div>
+                <div class="inspector-group">
+                  <p>Player Input <b>⌃</b></p>
+                  <label>Move <span>A / D</span></label><label>Fire <span>Space</span></label>
+                  <label>Cooldown <span>0.45 s</span></label>
+                </div>
+              </aside>
+
+              <div class="forge-tutorial-dock">
+                <div class="tutorial-dock-intro"><span>GUIDED TUTORIAL</span><strong>Moonwhisk Vale — First Engagement</strong><small>20 min</small></div>
+                <ol>
+                  <li class="is-current"><b>1</b><span><strong>Explore the scene hierarchy</strong><small>Find the camera, defense line, gunner rig, prototypes, spawners, and HUD.</small></span></li>
+                  <li><b>2</b><span><strong>Run the defense loop</strong><small>Move the rabbit gunner and stop four incoming birds.</small></span></li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <div class="demo-caption" aria-live="polite">
+            <span data-demo-index>01</span>
+            <div>
+              <p data-demo-eyebrow>AUTHORING VIEW</p>
+              <strong data-demo-title>Build the lesson inside the workspace.</strong>
+              <p data-demo-copy>The scene hierarchy, inspector, and guided steps frame the same Moonwhisk Vale artwork used by the tutorial pack.</p>
+            </div>
+            <small>SWIFTUI-STYLE<br>HOMEPAGE COMPOSITION</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section toolkit-section" id="toolkit" aria-labelledby="toolkit-title">
+      <div class="shell">
+        <div class="section-heading toolkit-heading reveal">
+          <p class="section-kicker">A workshop, not a black box</p>
+          <h2 id="toolkit-title" data-i18n-template="toolkit-title">Everything has a place.<br><span>Every change has a path.</span></h2>
+        </div>
+
+        <div class="bento-grid">
+          <article class="bento-card world-card reveal" data-spotlight>
+            <div class="card-topline"><span>WORLD TYPES</span><span>01 / 05</span></div>
+            <div class="world-switcher" aria-label="Supported world types">
+              <button type="button" class="is-active" data-world="2D" aria-pressed="true">2D</button>
+              <button type="button" data-world="3D" aria-pressed="false">3D</button>
+              <button type="button" data-world="MIXED" aria-pressed="false">MIXED</button>
+            </div>
+            <div class="world-readout" aria-live="polite">
+              <p data-world-label>SPRITEKIT / 2D</p>
+              <strong data-world-copy>Compose sprite-driven scenes with a visual canvas and camera-aware preview.</strong>
+            </div>
+            <div class="world-grid" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+          </article>
+
+          <article class="bento-card behavior-card reveal" data-spotlight>
+            <div class="card-topline"><span>BEHAVIOR</span><span>02 / 05</span></div>
+            <h3>Logic that reads like a creative decision.</h3>
+            <div class="behavior-flow" aria-label="Example behavior flow">
+              <span>ON TAP</span><i>→</i><span>IF READY</span><i>→</i><span>LOAD SCENE</span>
+            </div>
+            <p>Events, conditions, and actions keep gameplay flow inspectable and editable.</p>
+          </article>
+
+          <article class="bento-card preview-card reveal" data-spotlight>
+            <div class="card-topline"><span>PLAY PREVIEW</span><span>03 / 05</span></div>
+            <div class="preview-orb" aria-hidden="true"><span></span></div>
+            <h3>Stay close to the feel.</h3>
+            <p>Move from editing to a running preview without losing the scene you were shaping.</p>
+            <div class="preview-status"><i></i><span>Runtime connected</span><b>60 Hz</b></div>
+          </article>
+
+          <article class="bento-card optional-card reveal" data-spotlight>
+            <div class="card-topline"><span>OPTIONAL SYSTEMS</span><span>04 / 05</span></div>
+            <h3>AI and MCP stay tools—not hidden runtime dependencies.</h3>
+            <p>Use assisted workflows when they help. ForgeKit keeps editor assistance separate from exported game runtime code.</p>
+            <div class="optional-pills"><span>AI review</span><span>MCP tools</span><span>Permission aware</span></div>
+          </article>
+
+          <article class="bento-card xcode-card reveal" data-spotlight>
+            <div class="card-topline"><span>XCODE HANDOFF</span><span>05 / 05</span></div>
+            <div class="handoff-path" aria-hidden="true">
+              <span>FORGE</span><i></i><b>PROJECT</b><i></i><span>XCODE</span>
+            </div>
+            <h3>Release work stays explicit.</h3>
+            <p>ForgeKit prepares the project handoff. Signing, archive, and distribution remain visible in Xcode.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section character-section shell" id="character" aria-labelledby="character-title">
+      <div class="character-origin reveal">
+        <div class="origin-frame">
+          <img src="./assets/app-icon.png" width="512" height="512" loading="lazy" decoding="async" alt="The original ForgeKit app icon showing a rabbit maker building a game world">
+          <span>FROM THE APP ICON</span>
+        </div>
+        <div class="origin-trace" aria-hidden="true"><i></i><i></i><i></i></div>
+      </div>
+
+      <div class="character-copy reveal">
+        <p class="section-kicker">A maker at the center</p>
+        <h2 id="character-title" data-i18n-template="character-title">The rabbit is not just an icon. <span>It is the idea.</span></h2>
+        <p>Part engineer, part worldsmith: the ForgeKit rabbit turns small systems into living spaces. The goggles, stylus, and glowing voxel world become a visual shorthand for a tool that is curious, precise, and hands-on.</p>
+        <ul class="character-traits" aria-label="Character traits">
+          <li><i></i> Curious</li>
+          <li><i></i> Precise</li>
+          <li><i></i> Hands-on</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="release-section" id="release" aria-labelledby="release-title">
+      <div class="release-grid" aria-hidden="true"></div>
+      <div class="release-glow" aria-hidden="true"></div>
+      <img class="release-mascot" src="./assets/forgekit-rabbit-hero.png" width="800" height="1200" loading="lazy" decoding="async" alt="">
+      <div class="release-content shell reveal">
+        <p class="section-kicker">Beta release planned</p>
+        <h2 id="release-title">The workshop is still being forged.</h2>
+        <p>A ForgeKit beta release is planned. Until it is ready, follow development on GitHub and preview the direction here.</p>
+        <div class="release-actions">
+          <a class="button button-primary" href="https://github.com/Facta-Leopard/ForgeKit" rel="noreferrer">
+            <span>Follow development</span><span class="button-icon" aria-hidden="true">↗</span>
+          </a>
+          <a class="button button-quiet" href="#tutorial-preview">
+            <span>See tutorial preview</span><span class="button-icon" aria-hidden="true">↑</span>
+          </a>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <div class="wrap">Last updated: 2026-06-23. This static site is maintained for ForgeKit support and app review reference.</div>
+  <footer class="site-footer">
+    <div class="footer-inner shell">
+      <div class="footer-brand">
+        <a class="brand" href="./index.html"><img src="./assets/favicon.png" alt="" width="34" height="34"><span>ForgeKit</span></a>
+        <p>Visual game-making for Apple platforms.</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="./support.html">Support</a>
+        <a href="./privacy.html">Privacy</a>
+        <a href="https://github.com/Facta-Leopard/ForgeKit/issues" rel="noreferrer">Issues ↗</a>
+        <a href="https://github.com/Facta-Leopard/ForgeKit" rel="noreferrer">GitHub ↗</a>
+      </nav>
+    </div>
+    <div class="footer-note shell"><span>Designed around the ForgeKit app icon.</span><span>© <span data-year></span> Facta-Leopard</span></div>
   </footer>
 </body>
 </html>
