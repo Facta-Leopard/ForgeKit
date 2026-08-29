@@ -18,7 +18,7 @@
     en: {
       'ForgeKit — From first scene to playable game': 'ForgeKit — From your first scene to a playable game',
       'Shape 2D, 3D, and mixed games visually, test them in Play Preview, then hand off an Xcode project. Beta release planned.': 'Design 2D, 3D, and mixed games visually, test them in Play Preview, then continue in Xcode. Beta release planned.',
-      'ForgeKit rabbit world-builder with the headline From first scene to playable game.': 'The ForgeKit rabbit building a game world beside the headline “From your first scene to a playable game.”',
+      'Worldsmith, the ForgeKit maker, beside the headline From first scene to playable game.': 'Worldsmith building a game world beside the headline “From your first scene to a playable game.”',
       'See how it flows': 'See the workflow',
       'Xcode handoff': 'Continue in Xcode',
       'Beta in progress': 'Beta release planned',
@@ -43,8 +43,8 @@
       'Move from editing to a running preview without losing the scene you were shaping.': 'Move from editing to a running preview without losing your place.',
       'Release work stays explicit.': 'Finish the release in Xcode.',
       'ForgeKit prepares the project handoff. Signing, archive, and distribution remain visible in Xcode.': 'ForgeKit prepares the project. Signing, archiving, and distribution stay in Xcode.',
-      'A maker at the center': 'The idea behind the icon',
-      'Part engineer, part worldsmith: the ForgeKit rabbit turns small systems into living spaces. The goggles, stylus, and glowing voxel world become a visual shorthand for a tool that is curious, precise, and hands-on.': 'The ForgeKit rabbit brings small systems together into playable worlds. Its goggles, stylus, and glowing voxel scene reflect a tool built for curiosity, precision, and hands-on creation.',
+      'Meet Worldsmith': 'Meet Worldsmith',
+      'Part engineer, part maker, Worldsmith turns small systems into playable worlds. The goggles, stylus, and glowing voxel scene reflect a curious, precise, hands-on way of building games.': 'Part engineer, part maker, Worldsmith turns small systems into playable worlds. The goggles, stylus, and glowing voxel scene reflect a curious, precise, hands-on way of building games.',
       'The workshop is still being forged.': 'ForgeKit is still in development.',
       'A ForgeKit beta release is planned. Until it is ready, follow development on GitHub and preview the direction here.': 'A ForgeKit beta release is planned. Follow development on GitHub and preview what we are building here.',
       'Designed around the ForgeKit app icon.': 'Inspired by the ForgeKit app icon.'
@@ -61,11 +61,11 @@
   const templates = {
     en: {
       'hero-title': 'Build playable games. <span class="gradient-text">Visually.</span>',
-      'hero-lead': 'Design <strong>2D, 3D, and mixed games</strong> in a native macOS workspace. Test ideas in Play Preview, then continue with a structured Xcode project.',
-      'workflow-title': 'Build. Preview. Refine. <span>Export.</span>',
-      'tutorial-title': 'Learn in the editor.<br><span>Play it right away.</span>',
-      'toolkit-title': 'Scenes, logic, previews, and exports.<br><span>All in one place.</span>',
-      'character-title': 'The rabbit represents <span>ForgeKit’s hands-on approach.</span>'
+      'hero-lead': 'Design <strong class="i18n-keep">2D, 3D, and mixed games</strong> in a native macOS workspace. Test ideas in <span class="i18n-keep">Play Preview</span>, then continue with a structured Xcode project.',
+      'workflow-title': 'Build. Preview. Refine. <span class="heading-muted">Export.</span>',
+      'tutorial-title': 'Learn in the editor.<br><span class="heading-muted">Play it right away.</span>',
+      'toolkit-title': 'Scenes, logic, previews, and exports.<br><span class="heading-muted">All in one place.</span>',
+      'character-title': 'Worldsmith represents <span class="heading-muted">ForgeKit’s hands-on approach.</span>'
     },
     ko: localePacks.ko?.templates || {},
     ja: localePacks.ja?.templates || {},
