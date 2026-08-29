@@ -2449,7 +2449,8 @@ html:lang(fr) .forge-artboard #tutorial-preview-title {
   .forge-artboard .hero-tech li { padding: 5px 8px; font-size: 0.54rem; }
   .forge-artboard .hero-visual { min-height: min(122vw, 500px); margin-top: 42px; border-radius: 28px; }
   .forge-artboard .showcase-chrome { min-height: 50px; padding-inline: 13px; font-size: 0.47rem; }
-  .forge-artboard .showcase-chrome b { max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .forge-artboard .showcase-chrome { grid-template-columns: 1fr auto; }
+  .forge-artboard .showcase-chrome b { display: none; }
   .forge-artboard .hero-visual::after { inset: 50px 0 0; background-size: 38px 38px; }
   .forge-artboard .mascot-stage { top: 57%; left: 50%; width: 92vw; height: auto; transform: translate(-50%, -50%); }
   .forge-artboard .mascot-status { right: 4%; bottom: 4%; min-width: 158px; }
