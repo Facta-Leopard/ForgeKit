@@ -54,6 +54,71 @@
     }, { passive: true });
   });
 
+  const heroCanvas = document.querySelector('[data-parallax-root]');
+  const heroModeButtons = document.querySelectorAll('[data-hero-mode-button]');
+
+  const setHeroMode = (mode) => {
+    if (!heroCanvas || !['scene', 'behavior', 'play'].includes(mode)) return;
+
+    heroCanvas.dataset.heroMode = mode;
+    heroModeButtons.forEach((button) => {
+      const active = button.dataset.heroModeButton === mode;
+      button.classList.toggle('is-active', active);
+      button.setAttribute('aria-pressed', String(active));
+    });
+  };
+
+  heroModeButtons.forEach((button) => {
+    button.addEventListener('click', () => setHeroMode(button.dataset.heroModeButton));
+  });
+
+  if (heroCanvas && finePointer.matches && !reduceMotion.matches) {
+    heroCanvas.addEventListener('pointermove', (event) => {
+      const bounds = heroCanvas.getBoundingClientRect();
+      const horizontal = Math.min(1, Math.max(0, (event.clientX - bounds.left) / bounds.width));
+      const vertical = Math.min(1, Math.max(0, (event.clientY - bounds.top) / bounds.height));
+
+      heroCanvas.style.setProperty('--art-x', `${(horizontal * 100).toFixed(1)}%`);
+      heroCanvas.style.setProperty('--art-y', `${(vertical * 100).toFixed(1)}%`);
+      heroCanvas.style.setProperty('--tilt-x', `${((0.5 - vertical) * 1.6).toFixed(2)}deg`);
+      heroCanvas.style.setProperty('--tilt-y', `${((horizontal - 0.5) * 2).toFixed(2)}deg`);
+    }, { passive: true });
+
+    heroCanvas.addEventListener('pointerleave', () => {
+      heroCanvas.style.setProperty('--art-x', '68%');
+      heroCanvas.style.setProperty('--art-y', '36%');
+      heroCanvas.style.setProperty('--tilt-x', '0deg');
+      heroCanvas.style.setProperty('--tilt-y', '0deg');
+    }, { passive: true });
+  }
+
+  const sectionLinks = [...document.querySelectorAll('.nav-links a[href^="#"]')];
+
+  if ('IntersectionObserver' in window && sectionLinks.length) {
+    const sectionByID = new Map(sectionLinks.map((link) => {
+      const id = link.getAttribute('href').slice(1);
+      return [id, { link, section: document.getElementById(id) }];
+    }));
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      const current = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+      if (!current) return;
+      sectionByID.forEach(({ link }, id) => {
+        const active = id === current.target.id;
+        link.classList.toggle('is-current', active);
+        if (active) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      });
+    }, { rootMargin: '-22% 0px -58% 0px', threshold: [0, 0.12, 0.45] });
+
+    sectionByID.forEach(({ section }) => {
+      if (section) sectionObserver.observe(section);
+    });
+  }
+
   const worldContent = {
     '2D': {
       label: 'SPRITEKIT / 2D',

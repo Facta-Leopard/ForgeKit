@@ -22,14 +22,14 @@
   <link rel="canonical" href="https://facta-leopard.github.io/ForgeKit/">
   <link rel="icon" type="image/png" href="./assets/favicon.png">
   <link rel="preload" as="image" href="./assets/forgekit-rabbit-hero.png" fetchpriority="high">
-  <link rel="stylesheet" href="./assets/site.css?v=20260829-5">
-  <script src="./assets/site-i18n-cjk.js?v=20260829-5" defer></script>
-  <script src="./assets/site-i18n-eu.js?v=20260829-5" defer></script>
-  <script src="./assets/site-i18n.js?v=20260829-5" defer></script>
-  <script src="./assets/site.js?v=20260829-5" defer></script>
+  <link rel="stylesheet" href="./assets/site.css?v=20260829-11">
+  <script src="./assets/site-i18n-cjk.js?v=20260829-11" defer></script>
+  <script src="./assets/site-i18n-eu.js?v=20260829-11" defer></script>
+  <script src="./assets/site-i18n.js?v=20260829-11" defer></script>
+  <script src="./assets/site.js?v=20260829-11" defer></script>
   <title>ForgeKit — From first scene to playable game</title>
 </head>
-<body>
+<body class="forge-artboard">
   <div class="scroll-progress" aria-hidden="true"><span data-scroll-progress></span></div>
   <a class="skip-link" href="#main">Skip to content</a>
 
@@ -41,8 +41,8 @@
       </a>
 
       <div class="nav-links" aria-label="Page sections">
-        <a href="#workflow">Workflow</a>
         <a href="#tutorial-preview">Tutorial</a>
+        <a href="#workflow">Workflow</a>
         <a href="#toolkit">Toolkit</a>
         <a href="#character">Worldsmith</a>
       </div>
@@ -83,30 +83,40 @@
       </div>
 
       <div class="hero-copy reveal is-visible">
-        <p class="kicker beta-kicker"><span class="live-dot" aria-hidden="true"></span><span class="beta-copy">Beta release planned</span><span class="beta-context"><span aria-hidden="true">/</span>&nbsp;Visual game editor for Apple platforms</span></p>
-        <h1 id="hero-title" data-i18n-template="hero-title">Make the world in your head <span class="gradient-text">playable.</span></h1>
-        <p class="hero-lead" data-i18n-template="hero-lead">Build <strong class="i18n-keep">2D, 3D, and mixed games</strong> visually in a native macOS workspace. Test the loop in <span class="i18n-keep">Play Preview</span>, then export a structured Xcode project for release work.</p>
-
-        <div class="hero-actions">
-          <a class="button button-primary" href="#workflow">
-            <span>See how it flows</span>
-            <span class="button-icon" aria-hidden="true">↓</span>
-          </a>
-          <a class="button button-quiet" href="https://github.com/Facta-Leopard/ForgeKit" rel="noreferrer">
-            <span>Explore the repository</span>
-            <span class="button-icon" aria-hidden="true">↗</span>
-          </a>
+        <div class="hero-title-stack">
+          <p class="kicker beta-kicker"><span class="live-dot" aria-hidden="true"></span><span class="beta-copy">Beta release planned</span><span class="beta-context"><span aria-hidden="true">/</span>&nbsp;Visual game editor for Apple platforms</span></p>
+          <h1 id="hero-title" data-i18n-template="hero-title">Make the world in your head <span class="gradient-text">playable.</span></h1>
         </div>
 
-        <ul class="hero-tech" aria-label="Core technologies and workflow">
-          <li>SpriteKit</li>
-          <li>RealityKit</li>
-          <li>Play Preview</li>
-          <li>Xcode handoff</li>
-        </ul>
+        <div class="hero-support">
+          <p class="hero-lead" data-i18n-template="hero-lead">Build <strong class="i18n-keep">2D, 3D, and mixed games</strong> visually in a native macOS workspace. Test the loop in <span class="i18n-keep">Play Preview</span>, then export a structured Xcode project for release work.</p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#tutorial-preview">
+              <span>Tutorial screen preview</span>
+              <span class="button-icon" aria-hidden="true">↓</span>
+            </a>
+            <a class="button button-quiet" href="https://github.com/Facta-Leopard/ForgeKit" rel="noreferrer">
+              <span>Explore the repository</span>
+              <span class="button-icon" aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <ul class="hero-tech" aria-label="Core technologies and workflow">
+            <li>SpriteKit</li>
+            <li>RealityKit</li>
+            <li>Play Preview</li>
+            <li>Xcode handoff</li>
+          </ul>
+        </div>
       </div>
 
-      <div class="hero-visual reveal is-visible" data-parallax-root>
+      <div class="hero-visual reveal is-visible" data-parallax-root data-hero-mode="scene">
+        <div class="showcase-chrome" aria-hidden="true">
+          <span class="showcase-lights"><i></i><i></i><i></i></span>
+          <b>WORLD BUILDER / LIVE CANVAS</b>
+          <span>⌘ ↵</span>
+        </div>
         <div class="visual-halo" aria-hidden="true"></div>
         <div class="orbit orbit-outer" aria-hidden="true"><span></span><span></span><span></span></div>
         <div class="orbit orbit-inner" aria-hidden="true"><span></span><span></span></div>
@@ -130,14 +140,16 @@
           </figcaption>
         </figure>
 
-        <div class="tool-chip tool-chip-scene" aria-hidden="true"><span>01</span> SCENE</div>
-        <div class="tool-chip tool-chip-behavior" aria-hidden="true"><span>02</span> BEHAVIOR</div>
-        <div class="tool-chip tool-chip-play" aria-hidden="true"><span>03</span> PLAY</div>
+        <div class="hero-mode-switch" role="group" aria-label="Core technologies and workflow">
+          <button class="tool-chip tool-chip-scene is-active" type="button" data-hero-mode-button="scene" aria-pressed="true"><span>01</span> SCENE</button>
+          <button class="tool-chip tool-chip-behavior" type="button" data-hero-mode-button="behavior" aria-pressed="false"><span>02</span> BEHAVIOR</button>
+          <button class="tool-chip tool-chip-play" type="button" data-hero-mode-button="play" aria-pressed="false"><span>03</span> PLAY</button>
+        </div>
         <div class="axis-chip" aria-hidden="true"><i class="axis-x"></i><i class="axis-y"></i><i class="axis-z"></i></div>
       </div>
 
-      <a class="scroll-cue" href="#workflow" aria-label="Scroll to the workflow section">
-        <span>Scroll to forge</span>
+      <a class="scroll-cue" href="#tutorial-preview" aria-label="Tutorial screen preview">
+        <span>Tutorial screen preview</span>
         <i aria-hidden="true"></i>
       </a>
     </section>
@@ -149,73 +161,16 @@
       </div>
     </div>
 
-    <section class="section workflow-section shell" id="workflow" aria-labelledby="workflow-title">
-      <div class="section-heading reveal">
-        <p class="section-kicker">One creative loop</p>
-        <h2 id="workflow-title" data-i18n-template="workflow-title">Shape. Test. Refine. <span class="heading-muted">Hand off.</span></h2>
-        <p>ForgeKit keeps the creative loop visible. The editor owns the world-building work; Xcode remains the final release boundary.</p>
-      </div>
-
-      <div class="workflow-grid">
-        <article class="workflow-card reveal" data-spotlight>
-          <header>
-            <span class="step-index">01</span>
-            <span class="step-state"><i></i> BUILD</span>
-          </header>
-          <div class="step-display" aria-hidden="true">
-            <span class="scene-node node-a"></span>
-            <span class="scene-node node-b"></span>
-            <span class="scene-node node-c"></span>
-            <span class="scene-link link-a"></span>
-            <span class="scene-link link-b"></span>
-          </div>
-          <h3>Shape the scene</h3>
-          <p>Arrange entities, components, assets, and cameras in visual 2D, 3D, or mixed workspaces.</p>
-          <footer><span>SpriteKit</span><span>RealityKit</span><span>Mixed</span></footer>
-        </article>
-
-        <article class="workflow-card reveal" data-spotlight>
-          <header>
-            <span class="step-index">02</span>
-            <span class="step-state step-state-lime"><i></i> PREVIEW</span>
-          </header>
-          <div class="preview-display" aria-hidden="true">
-            <button type="button" tabindex="-1"><span></span></button>
-            <div class="preview-wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-            <small>00:12.48</small>
-          </div>
-          <h3>Play while it is fresh</h3>
-          <p>Use behavior-driven Play Preview to check the loop while the idea is still easy to reshape.</p>
-          <footer><span>Events</span><span>Conditions</span><span>Actions</span></footer>
-        </article>
-
-        <article class="workflow-card reveal" data-spotlight>
-          <header>
-            <span class="step-index">03</span>
-            <span class="step-state step-state-orange"><i></i> EXPORT</span>
-          </header>
-          <div class="export-display" aria-hidden="true">
-            <div><span>PROJECT</span><strong>ForgeWorld.xcodeproj</strong></div>
-            <i></i>
-            <div><span>TARGET</span><strong>Apple platforms</strong></div>
-            <b>↗</b>
-          </div>
-          <h3>Hand off with context</h3>
-          <p>Export a structured Xcode project for signing, archiving, distribution, and platform release work.</p>
-          <footer><span>Xcode</span><span>Validation</span><span>Release</span></footer>
-        </article>
-      </div>
-    </section>
-
     <section class="section tutorial-section" id="tutorial-preview" aria-labelledby="tutorial-preview-title">
       <div class="shell">
-        <div class="section-heading tutorial-heading reveal">
-          <p class="section-kicker">Built from the Moonwhisk Vale tutorial pack</p>
-          <h2 id="tutorial-preview-title" data-i18n-template="tutorial-title">Learn it in the editor.<br><span class="heading-muted">Feel it in play.</span></h2>
-          <p>This homepage preview uses the bundled tutorial artwork to stage the SwiftUI workspace and the game loop side by side. Switch the screen to see the same project move from authoring to Play Preview.</p>
-        </div>
+        <div class="tutorial-layout">
+          <div class="section-heading tutorial-heading reveal">
+            <p class="section-kicker">Built from the Moonwhisk Vale tutorial pack</p>
+            <h2 id="tutorial-preview-title" data-i18n-template="tutorial-title">Learn it in the editor.<br><span class="heading-muted">Feel it in play.</span></h2>
+            <p>This homepage preview uses the bundled tutorial artwork to stage the SwiftUI workspace and the game loop side by side. Switch the screen to see the same project move from authoring to Play Preview.</p>
+          </div>
 
-        <div class="tutorial-demo reveal" data-tutorial-demo data-mode="editor">
+          <div class="tutorial-demo reveal" data-tutorial-demo data-mode="editor">
           <div class="demo-control-row">
             <div class="demo-tabs" role="group" aria-label="Tutorial screen preview">
               <button type="button" class="is-active" data-demo-screen="editor" aria-pressed="true"><span>01</span> Editor</button>
@@ -303,8 +258,79 @@
             </div>
             <small>SWIFTUI-STYLE<br>HOMEPAGE COMPOSITION</small>
           </div>
+          </div>
         </div>
       </div>
+    </section>
+
+    <section class="section workflow-section shell" id="workflow" aria-labelledby="workflow-title">
+      <div class="section-heading reveal">
+        <p class="section-kicker">One creative loop</p>
+        <h2 id="workflow-title" data-i18n-template="workflow-title">Shape. Test. Refine. <span class="heading-muted">Hand off.</span></h2>
+        <p>ForgeKit keeps the creative loop visible. The editor owns the world-building work; Xcode remains the final release boundary.</p>
+      </div>
+
+      <ol class="workflow-grid">
+        <li class="workflow-step reveal">
+          <article class="workflow-card" data-spotlight>
+            <header>
+              <span class="step-index">01</span>
+              <span class="step-state"><i></i> BUILD</span>
+            </header>
+            <div class="step-display" aria-hidden="true">
+              <span class="scene-node node-a"></span>
+              <span class="scene-node node-b"></span>
+              <span class="scene-node node-c"></span>
+              <span class="scene-link link-a"></span>
+              <span class="scene-link link-b"></span>
+            </div>
+            <div class="workflow-copy">
+              <h3>Shape the scene</h3>
+              <p>Arrange entities, components, assets, and cameras in visual 2D, 3D, or mixed workspaces.</p>
+              <footer><span>SpriteKit</span><span>RealityKit</span><span>Mixed</span></footer>
+            </div>
+          </article>
+        </li>
+
+        <li class="workflow-step reveal">
+          <article class="workflow-card" data-spotlight>
+            <header>
+              <span class="step-index">02</span>
+              <span class="step-state step-state-lime"><i></i> PREVIEW</span>
+            </header>
+            <div class="preview-display" aria-hidden="true">
+              <button type="button" tabindex="-1"><span></span></button>
+              <div class="preview-wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <small>00:12.48</small>
+            </div>
+            <div class="workflow-copy">
+              <h3>Play while it is fresh</h3>
+              <p>Use behavior-driven Play Preview to check the loop while the idea is still easy to reshape.</p>
+              <footer><span>Events</span><span>Conditions</span><span>Actions</span></footer>
+            </div>
+          </article>
+        </li>
+
+        <li class="workflow-step reveal">
+          <article class="workflow-card" data-spotlight>
+            <header>
+              <span class="step-index">03</span>
+              <span class="step-state step-state-orange"><i></i> EXPORT</span>
+            </header>
+            <div class="export-display" aria-hidden="true">
+              <div><span>PROJECT</span><strong>ForgeWorld.xcodeproj</strong></div>
+              <i></i>
+              <div><span>TARGET</span><strong>Apple platforms</strong></div>
+              <b>↗</b>
+            </div>
+            <div class="workflow-copy">
+              <h3>Hand off with context</h3>
+              <p>Export a structured Xcode project for signing, archiving, distribution, and platform release work.</p>
+              <footer><span>Xcode</span><span>Validation</span><span>Release</span></footer>
+            </div>
+          </article>
+        </li>
+      </ol>
     </section>
 
     <section class="section toolkit-section" id="toolkit" aria-labelledby="toolkit-title">
@@ -389,6 +415,7 @@
     <section class="release-section" id="release" aria-labelledby="release-title">
       <div class="release-grid" aria-hidden="true"></div>
       <div class="release-glow" aria-hidden="true"></div>
+      <span class="release-watermark" aria-hidden="true">BETA</span>
       <img class="release-mascot" src="./assets/forgekit-rabbit-hero.png" width="800" height="1200" loading="lazy" decoding="async" alt="">
       <div class="release-content shell reveal">
         <p class="section-kicker">Beta release planned</p>
