@@ -55,7 +55,7 @@
         "From scene to Xcode": "장면에서 Xcode까지",
         "Research": "연구",
         "Architecture research": "엔진 아키텍처 연구",
-        "ForgeKit is an in-house engine built by the author of the vision paper on actor-based game engines to implement and test its proposed architecture.": "ForgeKit은 액터 기반 게임 엔진을 다룬 비전 논문의 저자가, 논문에서 제안한 구조를 직접 구현하고 검증하기 위해 만드는 인하우스 엔진입니다.",
+        "ForgeKit is an in-house engine built by the author of the vision paper on actor-based game engines to implement and test its proposed architecture.": "ForgeKit은 액터 기반 게임 엔진을 다룬 비전 논문의 저자가 직접 만드는 인하우스 엔진입니다. 논문에서 제안한 구조를 실제로 구현하고 검증하는 데 목적이 있습니다.",
         "The work moves beyond a proposal: its ideas are implemented, measured, and tested in a real editor and runtime.": "논문 속 제안에 머물지 않고, 실제 에디터와 런타임에서 구현하고 측정하며 검증합니다.",
         "ForgeKit combines Swift’s type system, value semantics, and concurrency model with Metal’s explicit GPU control. The goal is to make the most of both technologies while preserving the deterministic simulation that games require.": "Swift의 타입 시스템·값 의미론·동시성 모델과 Metal의 명시적인 GPU 제어를 결합합니다. 게임에 필요한 결정론적 시뮬레이션은 유지하면서 두 기술의 강점을 최대한 활용하는 것이 목표입니다.",
         "ForgeKit is not presented as a replacement for established engines. Its results, limitations, failures, and design tradeoffs will inform follow-up papers. This practical first step explores whether rethinking ownership, messaging, time, and data flow can lead to a meaningful new direction in game-engine architecture.": "ForgeKit을 기존 엔진의 대체재라고 주장하려는 것은 아닙니다. 구현 결과와 한계, 실패 사례, 설계상의 절충을 축적해 향후 후속 논문에서 연구를 더 발전시킬 계획입니다. 소유권, 메시지 전달, 시간, 데이터 흐름을 새롭게 설계하는 이 실전적 시도가 게임 엔진 구조에 의미 있는 변화를 만드는 작은 출발점이 되기를 기대합니다.",
