@@ -219,4 +219,165 @@
   } else {
     document.addEventListener('forgekit:languagechange', () => setWorld(currentWorld));
   }
+
+  const creatorAppGrid = document.querySelector('[data-creator-app-grid]');
+  const creatorAppCount = document.querySelector('[data-creator-app-count]');
+  const creatorAppError = document.querySelector('[data-creator-app-error]');
+  const creatorPlatformButtons = [...document.querySelectorAll('[data-creator-platform]')];
+  let creatorCatalog = null;
+  let creatorPlatform = 'mac';
+
+  const localizedCatalogText = (value) => {
+    if (!value) return '';
+    if (typeof value === 'string') return value;
+    const locale = window.forgeI18n?.locale || document.documentElement.lang || 'en';
+    return value[locale] || value.en || value.ko || Object.values(value)[0] || '';
+  };
+
+  const appendCreatorText = (parent, tag, className, value) => {
+    const element = document.createElement(tag);
+    if (className) element.className = className;
+    element.textContent = value;
+    parent.append(element);
+    return element;
+  };
+
+  const creatorArtworkURL = (entry) => {
+    const filename = String(entry.artwork || '').split('/').pop();
+    if (!/^[a-z0-9][a-z0-9._-]*\.(?:png|jpe?g)$/i.test(filename || '')) return '';
+    return './assets/creator-apps/' + filename;
+  };
+
+  const creatorAppURL = (entry) => {
+    if (/^https?:\/\//i.test(entry.href || '')) return entry.href;
+    if (entry.id === 'forgeplay') return 'https://facta-leopard.github.io/ForgePlay/';
+    return '';
+  };
+
+  const creatorPlatformLabel = (platform) => ({
+    mac: 'Mac',
+    ipad: 'iPad',
+    iphone: 'iPhone'
+  })[platform] || platform;
+
+  const createCreatorAppCard = (entry, index) => {
+    const card = document.createElement('article');
+    card.className = 'creator-app-card';
+    card.dataset.platform = entry.platform;
+    card.dataset.cardNumber = String(index + 1).padStart(2, '0');
+    if (entry.id === 'forgeplay') card.dataset.featured = 'true';
+    card.style.animationDelay = String(Math.min(index, 5) * 45) + 'ms';
+
+    const topLine = document.createElement('div');
+    topLine.className = 'creator-app-card-topline';
+    appendCreatorText(topLine, 'span', '', creatorPlatformLabel(entry.platform) + ' / ' + t(entry.kind === 'game' ? 'Game' : 'App'));
+    appendCreatorText(topLine, 'span', '', 'APP ' + String(index + 1).padStart(2, '0'));
+    card.append(topLine);
+
+    const identity = document.createElement('div');
+    identity.className = 'creator-app-identity';
+    const artwork = document.createElement('img');
+    artwork.className = 'creator-app-artwork';
+    artwork.src = creatorArtworkURL(entry);
+    artwork.width = 136;
+    artwork.height = 136;
+    artwork.loading = 'lazy';
+    artwork.decoding = 'async';
+    artwork.alt = '';
+    identity.append(artwork);
+
+    const identityCopy = document.createElement('div');
+    appendCreatorText(identityCopy, 'h3', '', entry.name);
+    const badges = document.createElement('div');
+    badges.className = 'creator-app-badges';
+    appendCreatorText(badges, 'span', 'creator-app-badge', creatorPlatformLabel(entry.platform));
+    appendCreatorText(badges, 'span', 'creator-app-badge', t(entry.kind === 'game' ? 'Game' : 'App'));
+    identityCopy.append(badges);
+    identity.append(identityCopy);
+    card.append(identity);
+
+    appendCreatorText(card, 'p', 'creator-app-summary', localizedCatalogText(entry.summaries));
+
+    const href = creatorAppURL(entry);
+    if (href) {
+      const link = appendCreatorText(
+        card,
+        'a',
+        'creator-app-link',
+        t(entry.appStoreID ? 'View on the App Store' : 'Open homepage')
+      );
+      link.href = href;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.setAttribute('aria-label', link.textContent + ': ' + entry.name);
+    }
+
+    return card;
+  };
+
+  const renderCreatorApps = () => {
+    if (!creatorCatalog || !creatorAppGrid) return;
+    const entries = creatorCatalog.apps.filter((entry) => entry.platform === creatorPlatform);
+    const fragment = document.createDocumentFragment();
+    entries.forEach((entry, index) => fragment.append(createCreatorAppCard(entry, index)));
+    creatorAppGrid.replaceChildren(fragment);
+    creatorAppGrid.setAttribute('aria-busy', 'false');
+
+    creatorPlatformButtons.forEach((button) => {
+      const selected = button.dataset.creatorPlatform === creatorPlatform;
+      button.setAttribute('aria-selected', String(selected));
+      button.tabIndex = selected ? 0 : -1;
+    });
+
+    if (creatorAppCount) {
+      const source = entries.length === 1 ? '1 released app' : '{count} released apps';
+      creatorAppCount.textContent = t(source).replace('{count}', String(entries.length));
+    }
+  };
+
+  const selectCreatorPlatform = (platform) => {
+    if (!['mac', 'ipad', 'iphone'].includes(platform)) return;
+    creatorPlatform = platform;
+    renderCreatorApps();
+  };
+
+  creatorPlatformButtons.forEach((button, index) => {
+    button.addEventListener('click', () => selectCreatorPlatform(button.dataset.creatorPlatform));
+    button.addEventListener('keydown', (event) => {
+      if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+      event.preventDefault();
+      const direction = event.key === 'ArrowRight' ? 1 : -1;
+      const nextIndex = (index + direction + creatorPlatformButtons.length) % creatorPlatformButtons.length;
+      const nextButton = creatorPlatformButtons[nextIndex];
+      selectCreatorPlatform(nextButton.dataset.creatorPlatform);
+      nextButton.focus();
+    });
+  });
+
+  if (creatorAppGrid) {
+    fetch('./assets/creator-apps.json?v=20260929-2', {
+      cache: 'no-store',
+      headers: { Accept: 'application/json' }
+    })
+      .then((response) => {
+        if (!response.ok) throw new Error('HTTP ' + response.status);
+        return response.json();
+      })
+      .then((catalog) => {
+        if (!Array.isArray(catalog.apps)) throw new Error('Invalid creator app catalog');
+        creatorCatalog = catalog;
+        renderCreatorApps();
+      })
+      .catch(() => {
+        creatorAppGrid.replaceChildren();
+        creatorAppGrid.setAttribute('aria-busy', 'false');
+        if (creatorAppError) {
+          creatorAppError.hidden = false;
+          creatorAppError.textContent = t('The app catalog could not be loaded.');
+        }
+        if (creatorAppCount) creatorAppCount.textContent = t('Catalog unavailable');
+      });
+
+    document.addEventListener('forgekit:languagechange', renderCreatorApps);
+  }
 })();
